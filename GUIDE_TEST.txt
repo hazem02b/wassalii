@@ -1,0 +1,139 @@
+═══════════════════════════════════════════════════════════
+                 WASSALI - GUIDE DE TEST
+═══════════════════════════════════════════════════════════
+
+🔐 IDENTIFIANTS DE CONNEXION
+═══════════════════════════════════════════════════════════
+
+📱 COMPTE CLIENT
+   Email:    client@wassali.com
+   Password: client123
+   
+🚛 COMPTE TRANSPORTEUR
+   Email:    transporteur@wassali.com
+   Password: transporteur123
+
+═══════════════════════════════════════════════════════════
+✅ FONCTIONNALITÉS DISPONIBLES
+═══════════════════════════════════════════════════════════
+
+CLIENT:
+  ✓ Connexion
+  ✓ Dashboard / Accueil
+  ✓ Rechercher des trajets
+  ✓ Voir détails d'un trajet
+  ✓ Réserver un trajet
+  ✓ Mes réservations
+  ✓ Messages
+  ✓ Profil
+  ✓ Paramètres (changement de langue: FR/EN/AR)
+
+TRANSPORTEUR:
+  ✓ Connexion
+  ✓ Dashboard
+  ✓ Créer un trajet
+  ✓ Mes trajets
+  ✓ Messages
+  ✓ Profil
+  ✓ Paramètres (changement de langue: FR/EN/AR)
+
+═══════════════════════════════════════════════════════════
+🔧 INFORMATIONS TECHNIQUES
+═══════════════════════════════════════════════════════════
+
+Backend API:     http://localhost:8000
+Frontend:        http://localhost:XXXXX (port auto)
+Base de données: web_src/backend/wassali_test.db
+
+═══════════════════════════════════════════════════════════
+📋 SCÉNARIOS DE TEST
+═══════════════════════════════════════════════════════════
+
+TEST 1: CONNEXION CLIENT
+1. Ouvrir l'app
+2. Cliquer sur "Client"
+3. Entrer: client@wassali.com / client123
+4. Cliquer "Connexion"
+5. ✓ Devrait afficher le dashboard client
+
+TEST 2: RECHERCHE DE TRAJET (CLIENT)
+1. Se connecter en tant que client
+2. Aller sur "Rechercher"
+3. Entrer une ville de départ et destination
+4. Cliquer "Rechercher"
+5. ✓ Devrait afficher la liste des trajets
+
+TEST 3: CRÉATION DE TRAJET (TRANSPORTEUR)
+1. Se connecter en tant que transporteur
+2. Aller sur "Mes trajets"
+3. Cliquer sur le bouton "+"
+4. Remplir le formulaire:
+   - Ville de départ: Paris
+   - Ville d'arrivée: Tunis
+   - Date: Aujourd'hui ou demain
+   - Poids dispo: 50
+   - Prix/kg: 10
+5. Cliquer "Publier"
+6. ✓ Le trajet devrait apparaître dans "Mes trajets"
+
+TEST 4: MESSAGES
+1. Se connecter (client ou transporteur)
+2. Aller sur "Messages"
+3. ✓ Devrait afficher la liste des conversations
+
+TEST 5: PROFIL
+1. Se connecter (client ou transporteur)
+2. Aller sur "Profil"
+3. ✓ Devrait afficher les informations utilisateur
+4. Cliquer "Modifier"
+5. Changer le nom ou téléphone
+6. Cliquer "Enregistrer"
+7. ✓ Les modifications devraient être sauvegardées
+
+TEST 6: CHANGEMENT DE LANGUE
+1. Se connecter
+2. Aller sur "Paramètres"
+3. Cliquer sur "Langue de l'application"
+4. Choisir une langue (Français/English/العربية)
+5. ✓ La langue devrait changer
+
+═══════════════════════════════════════════════════════════
+❓ EN CAS DE PROBLÈME
+═══════════════════════════════════════════════════════════
+
+ERREUR 401 (Unauthorized):
+→ Les identifiants sont incorrects
+→ Utiliser: client@wassali.com / client123
+   ou: transporteur@wassali.com / transporteur123
+
+ERREUR 404 (Not Found):
+→ La route n'existe pas
+→ Vérifier que vous avez bien cliqué sur le bon bouton
+→ Relancer l'app avec "r" dans le terminal Flutter
+
+PAGE BLANCHE OU VIDE:
+→ Les données ne sont pas encore chargées
+→ Vérifier que le backend tourne (http://localhost:8000)
+→ Vérifier dans la console Flutter s'il y a des erreurs
+
+BACKEND NE RÉPOND PAS:
+→ Vérifier que le serveur tourne dans le terminal
+→ Redémarrer avec: cd web_src/backend; python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
+
+═══════════════════════════════════════════════════════════
+📌 NOTES IMPORTANTES
+═══════════════════════════════════════════════════════════
+
+• Les trajets créés par le transporteur apparaîtront dans
+  la recherche du client
+  
+• Pour tester la réservation, il faut d'abord créer un
+  trajet avec le compte transporteur
+  
+• Les messages nécessitent au moins 2 utilisateurs pour
+  fonctionner (tester avec les 2 comptes)
+  
+• Le changement de langue est persistant (sauvegardé dans
+  SharedPreferences)
+
+═══════════════════════════════════════════════════════════

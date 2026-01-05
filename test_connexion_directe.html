@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Connexion Wassali</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Test Connexion Transporteur</h1>
+    <button onclick="testLogin()">Tester Connexion</button>
+    <pre id="result"></pre>
+
+    <script>
+        async function testLogin() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = 'Test en cours...';
+            
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: 'transporteur@wassali.com',
+                        password: 'transporteur123',
+                        role: 'transporter'
+                    })
+                });
+                
+                const data = await response.json();
+                resultDiv.textContent = `✅ Succès!\nStatus: ${response.status}\n\n${JSON.stringify(data, null, 2)}`;
+            } catch (error) {
+                resultDiv.textContent = `❌ Erreur: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>
