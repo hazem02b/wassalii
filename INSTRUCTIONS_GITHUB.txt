@@ -1,0 +1,84 @@
+﻿═
+           COMMENT METTRE CES FICHIERS SUR GITHUB              
+
+
+
+ ETAPE 1: CREER L'APK
+
+
+Dans ce dossier, tapez:
+
+    flutter clean
+    flutter pub get
+    flutter build apk --release
+
+APK créé: build\app\outputs\flutter-apk\app-release.apk
+
+
+ ETAPE 2: AJOUTER LES FICHIERS AU REPO GITHUB
+
+
+Dans PowerShell:
+
+    git add README_UTILISATEURS.md
+    git add INSTALLATION.md
+    git add COMMENT_UTILISER.txt
+    git add RELEASE_NOTES.md
+    git add GUIDE_COMPLET_RENDER.txt
+    git add lib/config/api_config.dart
+    git commit -m "Ajout guides utilisateurs et configuration Render"
+    git push origin main
+
+
+ ETAPE 3: CREER UNE RELEASE SUR GITHUB
+
+
+1. Allez sur: https://github.com/hazem02b/wassalii/releases
+
+2. Cliquez "Create a new release"
+
+3. Tag version: v1.0.0
+
+4. Release title: Wassali v1.0.0 - Application de Livraison
+
+5. Description: Copiez le contenu de RELEASE_NOTES.md
+
+6. Upload: app-release.apk (depuis build\app\outputs\flutter-apk\)
+
+7. Cliquez "Publish release"
+
+
+ ETAPE 4: PARTAGER AVEC VOS AMIS
+
+
+Envoyez-leur ces liens:
+
+1. Lien vers la Release:
+   https://github.com/hazem02b/wassalii/releases/latest
+
+2. Guide utilisateur:
+   https://github.com/hazem02b/wassalii/blob/main/README_UTILISATEURS.md
+
+3. Ou juste: "Va sur le repo GitHub et télécharge l'APK!"
+
+
+
+RESULTATS
+
+
+ Vos amis voient les fichiers sur GitHub
+ Ils peuvent télécharger l'APK depuis Releases
+ Ils ont les instructions complètes
+ Tout est automatique pour eux!
+
+
+
+LIENS IMPORTANTS
+
+
+Votre repo: https://github.com/hazem02b/wassalii
+Serveur Render: https://wassali-backend.onrender.com
+Documentation API: https://wassali-backend.onrender.com/docs
+
+
+

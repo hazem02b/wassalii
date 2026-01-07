@@ -1,0 +1,151 @@
+═══════════════════════════════════════════════════════════════
+           WASSALI - PARTAGER L'APP AVEC VOS AMIS
+═══════════════════════════════════════════════════════════════
+
+📱 POUR QUE VOS AMIS UTILISENT L'APP SUR LEUR TELEPHONE
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ETAPE 1 : TROUVER VOTRE ADRESSE IP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Ouvrez PowerShell ou Invite de commandes
+2. Tapez: ipconfig
+3. Cherchez "Adresse IPv4" sous votre connexion WiFi
+4. Notez-la, exemple: 192.168.1.123
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ETAPE 2 : MODIFIER LA CONFIGURATION DE L'APP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Ouvrez le fichier: lib/config/api_config.dart
+
+2. Trouvez cette ligne:
+   static const String baseUrl = 'http://localhost:8000/api/v1';
+
+3. Remplacez par (utilisez VOTRE IP):
+   static const String baseUrl = 'http://192.168.1.123:8000/api/v1';
+
+4. Sauvegardez le fichier
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ETAPE 3 : OUVRIR LE FIREWALL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Faites un CLIC DROIT sur: OUVRIR_FIREWALL.bat
+2. Choisissez: "Exécuter en tant qu'administrateur"
+3. Le firewall sera configuré automatiquement
+
+   OU tapez dans PowerShell (en admin):
+   netsh advfirewall firewall add rule name="Wassali Backend" dir=in action=allow protocol=TCP localport=8000
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ETAPE 4 : CREER L'APK POUR ANDROID
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Ouvrez PowerShell dans le dossier du projet
+2. Tapez: flutter build apk --release
+3. Attendez que la compilation se termine (5-10 minutes)
+4. Le fichier APK sera ici: build/app/outputs/flutter-apk/app-release.apk
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ETAPE 5 : PARTAGER L'APK AVEC VOS AMIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Option A - Clé USB:
+   - Copiez app-release.apk sur une clé USB
+   - Transférez sur les téléphones de vos amis
+
+Option B - Cloud (Google Drive, Dropbox, etc.):
+   - Uploadez app-release.apk
+   - Partagez le lien de téléchargement
+
+Option C - Bluetooth/WiFi Direct:
+   - Envoyez directement le fichier
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ETAPE 6 : DEMARRER LE SERVEUR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Double-cliquez sur: LANCER_SERVEUR.bat
+2. Une fenêtre noire va s'ouvrir avec votre IP
+3. NE LA FERMEZ PAS tant que vos amis utilisent l'app!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ETAPE 7 : VOS AMIS INSTALLENT L'APP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Sur leur téléphone Android:
+   - Paramètres → Sécurité → Autoriser "Sources inconnues"
+   - Ouvrir le fichier app-release.apk
+   - Cliquer sur "Installer"
+
+2. Se connecter AU MEME WiFi que vous
+
+3. Ouvrir l'app Wassali et l'utiliser!
+
+
+═══════════════════════════════════════════════════════════════
+                          CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+VOUS:
+  ☐ IP trouvée avec ipconfig
+  ☐ IP changée dans lib/config/api_config.dart
+  ☐ Firewall ouvert (OUVRIR_FIREWALL.bat)
+  ☐ APK créé avec: flutter build apk --release
+  ☐ APK partagé avec vos amis
+  ☐ Serveur lancé avec: LANCER_SERVEUR.bat
+  ☐ Ordinateur connecté au WiFi
+
+VOS AMIS:
+  ☐ APK installé sur leur téléphone
+  ☐ Connectés au même réseau WiFi
+  ☐ App Wassali ouverte
+
+
+═══════════════════════════════════════════════════════════════
+                     PROBLEMES COURANTS
+═══════════════════════════════════════════════════════════════
+
+❌ "Impossible de se connecter au serveur"
+   → Vérifiez que vous êtes sur le MEME WiFi
+   → Vérifiez que le serveur est lancé (fenêtre ouverte)
+   → Vérifiez l'IP dans api_config.dart
+
+❌ "L'app ne s'ouvre pas"
+   → Vérifiez "Sources inconnues" dans les paramètres
+   → Réinstallez l'APK
+
+❌ "Le serveur ne démarre pas"
+   → Installez Python depuis python.org
+   → Vérifiez que le port 8000 est libre
+
+
+═══════════════════════════════════════════════════════════════
+                         TEST RAPIDE
+═══════════════════════════════════════════════════════════════
+
+Pour vérifier que tout fonctionne:
+
+1. Lancez le serveur (LANCER_SERVEUR.bat)
+
+2. Sur le téléphone de votre ami, ouvrez le navigateur
+
+3. Allez à: http://VOTRE_IP:8000/docs
+   (Remplacez VOTRE_IP, exemple: http://192.168.1.123:8000/docs)
+
+4. S'il voit la documentation Swagger → ✅ Ça marche!
+
+
+═══════════════════════════════════════════════════════════════
+
+Besoin d'aide? Consultez le fichier PARTAGE_APP.md
+
+═══════════════════════════════════════════════════════════════

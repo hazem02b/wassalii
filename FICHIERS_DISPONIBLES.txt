@@ -1,0 +1,177 @@
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║              WASSALI - FICHIERS POUR VOS AMIS                  ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+
+✅ TOUS LES FICHIERS NECESSAIRES SONT DANS CE REPO!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📂 FICHIERS DISPONIBLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+🚀 FICHIERS EXECUTABLES (.bat)
+═══════════════════════════════════════════════════════════════
+
+1. LANCER_SERVEUR.bat ⭐⭐⭐
+   → Lance le backend pour le réseau
+   → Affiche votre IP automatiquement
+   → Configuration firewall incluse
+   → Double-cliquez pour lancer!
+
+2. OUVRIR_FIREWALL.bat ⭐⭐⭐
+   → Ouvre le port 8000 dans Windows Firewall
+   → Clic droit → "Exécuter en tant qu'administrateur"
+   → À faire UNE SEULE FOIS
+
+3. CREER_BASE_DONNEES.bat
+   → Initialise la base de données SQLite
+   → Crée les comptes de test
+   → À lancer après le serveur
+
+4. create_accounts.bat
+   → Crée uniquement les comptes test
+   → Client: client@wassali.com / ClientTest123!
+   → Transporteur: transporteur@wassali.com / TransportTest123!
+
+
+📚 FICHIERS DOCUMENTATION (.md et .txt)
+═══════════════════════════════════════════════════════════════
+
+1. DEMARRAGE_RAPIDE_AMIS.md ⭐⭐⭐ [COMMENCEZ ICI!]
+   → Guide complet en 7 étapes
+   → Checklist incluse
+   → Solutions aux problèmes courants
+
+2. INSTRUCTIONS_SIMPLES.txt ⭐⭐⭐
+   → Version texte simple
+   → Facile à lire dans Notepad
+   → Instructions détaillées
+
+3. PARTAGE_APP.md
+   → Guide spécifique au partage APK
+   → Options multiples (USB, Cloud, Bluetooth)
+   → Configuration réseau
+
+4. README.md
+   → Documentation complète du projet
+   → Architecture
+   → Installation complète
+
+
+🔧 AUTRES FICHIERS
+═══════════════════════════════════════════════════════════════
+
+- web_src/backend/run_server.bat
+  → Ancien script de lancement (remplacé par LANCER_SERVEUR.bat)
+
+- web_src/backend/.env
+  → Configuration backend (SECRET_KEY, DATABASE_URL, etc.)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 ORDRE D'UTILISATION RECOMMANDE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PREMIERE UTILISATION:
+═══════════════════════════════════════════════════════════════
+
+1. Lire: DEMARRAGE_RAPIDE_AMIS.md
+
+2. Trouver votre IP:
+   - Ouvrir PowerShell
+   - Taper: ipconfig
+   - Noter l'adresse IPv4
+
+3. Modifier: lib/config/api_config.dart
+   - Remplacer localhost par votre IP
+   - Sauvegarder
+
+4. Exécuter: OUVRIR_FIREWALL.bat (en admin)
+
+5. Exécuter: LANCER_SERVEUR.bat
+
+6. Exécuter: CREER_BASE_DONNEES.bat
+
+7. Créer l'APK:
+   - flutter build apk --release
+
+8. Partager app-release.apk avec vos amis
+
+
+UTILISATIONS SUIVANTES:
+═══════════════════════════════════════════════════════════════
+
+1. Exécuter: LANCER_SERVEUR.bat
+2. Vos amis ouvrent l'app
+3. C'est tout! ✅
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❓ REPONSES RAPIDES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Q: Quels fichiers manquaient dans le repo?
+A: Aucun! Mais les scripts existants n'étaient pas configurés
+   pour le réseau. Les nouveaux fichiers (LANCER_SERVEUR.bat,
+   etc.) sont spécialement conçus pour vos amis.
+
+Q: Backend, frontend, base de données - tout est là?
+A: OUI!
+   - Backend: web_src/backend/ (FastAPI/Python)
+   - Frontend: lib/ (Flutter/Dart)
+   - Base de données: SQLite (créée automatiquement)
+
+Q: Où est le fichier APK?
+A: Il n'est pas dans le repo (trop volumineux).
+   Vous devez le créer avec: flutter build apk --release
+   Il sera dans: build/app/outputs/flutter-apk/app-release.apk
+
+Q: Mes amis peuvent l'utiliser tout de suite?
+A: Après ces étapes:
+   1. Vous modifiez l'IP dans api_config.dart
+   2. Vous créez l'APK
+   3. Vous le partagez
+   4. Vous lancez le serveur
+   5. Ils installent et ouvrent l'app
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ RESUME ULTRA-SIMPLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RIEN NE MANQUE! Tous les fichiers sont là:
+
+✅ Backend (serveur)
+✅ Frontend (app mobile)
+✅ Base de données (SQLite)
+✅ Scripts de lancement
+✅ Configuration
+✅ Documentation
+
+Vous devez juste:
+1. Changer l'IP dans 1 fichier
+2. Lancer 2 fichiers .bat
+3. Créer l'APK
+4. Le partager
+
+Temps total: 10 minutes max!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📞 BESOIN D'AIDE?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Consultez: DEMARRAGE_RAPIDE_AMIS.md
+2. Consultez: INSTRUCTIONS_SIMPLES.txt
+3. Vérifiez la section "Problèmes Courants"
+
+
+═══════════════════════════════════════════════════════════════
+
+Bonne chance! 🚀 Vos amis vont adorer Wassali!
+
+═══════════════════════════════════════════════════════════════

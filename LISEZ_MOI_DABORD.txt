@@ -1,0 +1,61 @@
+═══════════════════════════════════════════════════════════════
+    🚀 WASSALI - COMMENCEZ ICI!
+═══════════════════════════════════════════════════════════════
+
+Pour que vos amis utilisent l'app sur leur téléphone:
+
+
+1️⃣  OUVREZ CE FICHIER:
+    📄 DEMARRAGE_RAPIDE_AMIS.md
+    
+    → Guide complet en 7 étapes
+    → Tout est expliqué simplement
+
+
+2️⃣  OU SUIVEZ CES 4 ETAPES RAPIDES:
+
+    a) Trouvez votre IP:
+       - PowerShell → ipconfig
+       - Notez l'adresse IPv4 (ex: 192.168.1.123)
+    
+    b) Modifiez lib/config/api_config.dart:
+       - Remplacez localhost par votre IP
+    
+    c) Lancez le serveur:
+       - Double-cliquez: LANCER_SERVEUR.bat
+    
+    d) Créez l'APK:
+       - PowerShell → flutter build apk --release
+
+
+3️⃣  PARTAGEZ L'APK:
+    📂 build/app/outputs/flutter-apk/app-release.apk
+    
+    → Envoyez à vos amis via USB, Bluetooth, Drive, etc.
+
+
+═══════════════════════════════════════════════════════════════
+
+✅ RIEN NE MANQUE DANS CE REPO!
+
+Tout est là:
+- ✅ Backend (serveur)
+- ✅ Frontend (app)  
+- ✅ Base de données
+- ✅ Scripts de lancement
+- ✅ Documentation complète
+
+═══════════════════════════════════════════════════════════════
+
+📚 AUTRES FICHIERS UTILES:
+
+- INSTRUCTIONS_SIMPLES.txt   → Version texte simple
+- FICHIERS_DISPONIBLES.txt   → Liste de tous les fichiers
+- OUVRIR_FIREWALL.bat        → Configure le firewall
+- CREER_BASE_DONNEES.bat     → Crée la base de données
+
+═══════════════════════════════════════════════════════════════
+
+Bonne chance! 🎉
+
+═══════════════════════════════════════════════════════════════
