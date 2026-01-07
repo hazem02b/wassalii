@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wassali - Activation du serveur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .status {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .status.checking {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .info {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .info strong {
+            color: #667eea;
+        }
+        
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 10px 0;
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Wassali - Activation du serveur</h1>
+        <p class="subtitle">Réveiller le backend avant d'utiliser l'application mobile</p>
+        
+        <div id="status" class="status checking" style="display: none;">
+            <div class="spinner"></div>
+            <div id="statusText">Vérification du serveur...</div>
+            <div id="timer" class="timer"></div>
+        </div>
+        
+        <button id="activateBtn" onclick="activateServer()">🔥 Activer le serveur</button>
+        
+        <div class="instructions">
+            <h3>📱 Pourquoi cette étape ?</h3>
+            <ol>
+                <li>Le serveur est hébergé gratuitement sur <strong>Render.com</strong></li>
+                <li>Il <strong>s'endort</strong> après 15 minutes d'inactivité</li>
+                <li>Il faut <strong>30-60 secondes</strong> pour le réveiller</li>
+                <li>Cliquez sur le bouton ci-dessus <strong>AVANT</strong> d'ouvrir l'app mobile</li>
+            </ol>
+        </div>
+        
+        <div class="info">
+            <strong>💡 Astuce :</strong> Une fois activé, le serveur reste éveillé pendant 15 minutes. Vous pouvez tester l'application tranquillement pendant ce temps !
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'https://wassali-backend.onrender.com';
+        let startTime;
+        let timerInterval;
+
+        function updateTimer() {
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            document.getElementById('timer').textContent = `⏱️ ${elapsed}s`;
+        }
+
+        async function checkServerHealth() {
+            try {
+                const response = await fetch(`${API_URL}/health`, {
+                    method: 'GET',
+                    cache: 'no-cache'
+                });
+                return response.ok;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        async function activateServer() {
+            const btn = document.getElementById('activateBtn');
+            const status = document.getElementById('status');
+            const statusText = document.getElementById('statusText');
+            
+            btn.disabled = true;
+            status.style.display = 'block';
+            status.className = 'status checking';
+            statusText.textContent = '🔄 Réveil du serveur en cours...';
+            
+            startTime = Date.now();
+            timerInterval = setInterval(updateTimer, 100);
+            
+            let attempts = 0;
+            const maxAttempts = 30; // 30 tentatives = 90 secondes max
+            
+            while (attempts < maxAttempts) {
+                const isHealthy = await checkServerHealth();
+                
+                if (isHealthy) {
+                    clearInterval(timerInterval);
+                    const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                    status.className = 'status success';
+                    statusText.innerHTML = `
+                        ✅ <strong>Serveur actif !</strong><br>
+                        Temps d'activation : ${elapsed}s<br><br>
+                        🎉 Vous pouvez maintenant ouvrir l'application mobile Wassali
+                    `;
+                    btn.textContent = '✓ Serveur activé';
+                    
+                    // Réactiver le bouton après 15 minutes
+                    setTimeout(() => {
+                        btn.disabled = false;
+                        btn.textContent = '🔥 Réactiver le serveur';
+                        status.style.display = 'none';
+                    }, 15 * 60 * 1000);
+                    
+                    return;
+                }
+                
+                attempts++;
+                await new Promise(resolve => setTimeout(resolve, 3000)); // Attendre 3s entre chaque tentative
+            }
+            
+            // Si on arrive ici, le serveur n'a pas répondu
+            clearInterval(timerInterval);
+            status.className = 'status error';
+            statusText.innerHTML = `
+                ❌ <strong>Échec de l'activation</strong><br><br>
+                Le serveur ne répond pas. Vérifiez votre connexion internet et réessayez.
+            `;
+            btn.disabled = false;
+            btn.textContent = '🔄 Réessayer';
+        }
+        
+        // Vérifier automatiquement au chargement
+        window.onload = async () => {
+            const isHealthy = await checkServerHealth();
+            if (isHealthy) {
+                document.getElementById('activateBtn').textContent = '✓ Serveur déjà actif !';
+                document.getElementById('activateBtn').style.background = '#28a745';
+            }
+        };
+    </script>
+</body>
+</html>

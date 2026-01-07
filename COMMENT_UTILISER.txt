@@ -1,0 +1,83 @@
+═══════════════════════════════════════════════════════════════
+               WASSALI - COMMENT UTILISER L'APP
+═══════════════════════════════════════════════════════════════
+
+
+📱 POUR VOS AMIS / UTILISATEURS
+═══════════════════════════════════════════════════════════════
+
+1. TELECHARGER L'APK
+   → GitHub: https://github.com/hazem02b/wassalii/releases
+   → Ou depuis le lien que vous avez reçu
+
+2. INSTALLER
+   → Ouvrir app-release.apk sur votre téléphone
+   → Autoriser "Sources inconnues" si demandé
+   → Installer
+
+3. UTILISER
+   → Ouvrir l'app Wassali
+   → Créer un compte ou se connecter
+   → Commencer! ✅
+
+
+═══════════════════════════════════════════════════════════════
+AUCUNE CONFIGURATION NECESSAIRE!
+═══════════════════════════════════════════════════════════════
+
+❌ Pas besoin de configurer un serveur
+❌ Pas besoin d'installer Python ou Node.js
+❌ Pas besoin d'être sur le même réseau WiFi
+✅ L'app fonctionne directement de n'importe où!
+
+
+═══════════════════════════════════════════════════════════════
+SERVEUR
+═══════════════════════════════════════════════════════════════
+
+Le serveur est hébergé sur Render et accessible 24/7:
+https://wassali-backend.onrender.com
+
+L'app se connecte automatiquement au serveur.
+
+
+═══════════════════════════════════════════════════════════════
+COMPTES DE TEST
+═══════════════════════════════════════════════════════════════
+
+CLIENT:
+Email: client@wassali.com
+Mot de passe: ClientTest123!
+
+TRANSPORTEUR:
+Email: transporteur@wassali.com
+Mot de passe: TransportTest123!
+
+
+═══════════════════════════════════════════════════════════════
+PROBLEMES COURANTS
+═══════════════════════════════════════════════════════════════
+
+❌ "Serveur inaccessible" ?
+   → Attendez 30-60 secondes (le serveur se réveille)
+   → Réessayez
+
+❌ "L'app ne s'installe pas" ?
+   → Autorisez "Sources inconnues" dans Paramètres
+   → Vérifiez l'espace disponible (min 50 MB)
+
+❌ "Impossible de se connecter" ?
+   → Vérifiez votre connexion Internet
+   → Réessayez après 1 minute
+
+
+═══════════════════════════════════════════════════════════════
+SUPPORT
+═══════════════════════════════════════════════════════════════
+
+GitHub Issues: https://github.com/hazem02b/wassalii/issues
+
+
+═══════════════════════════════════════════════════════════════
+C'est tout! Bon usage! 🎉
+═══════════════════════════════════════════════════════════════

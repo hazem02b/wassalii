@@ -1,0 +1,46 @@
+﻿═
+     WASSALI - GUIDE COMPLET AVEC RENDER
+
+
+ TOUT EST PRET! Aucun fichier manquant.
+
+
+POUR VOS AMIS - 3 ETAPES
+
+
+1. Télécharger l'APK (vous leur envoyez)
+2. Installer l'APK sur leur téléphone
+3. Ouvrir l'app - C'est automatique! 
+
+Pas besoin de:
+ Configurer un serveur
+ Être sur le même WiFi
+ Lancer des fichiers .bat
+ Installer Python ou autre chose
+
+
+POUR VOUS - CREER L'APK
+
+
+flutter clean
+flutter pub get
+flutter build apk --release
+
+APK créé: build\app\outputs\flutter-apk\app-release.apk
+
+
+CONFIGURATION
+
+
+ Frontend: lib/ (déjà configuré)
+ Backend: https://wassali-backend.onrender.com (actif 24/7)
+ Base de données: Gérée par Render
+
+
+AUCUN FICHIER MANQUANT!
+━
+
+Avec Render, vos amis sont 100% indépendants de vous.
+L'app fonctionne de n'importe où, 24/7.
+
+
